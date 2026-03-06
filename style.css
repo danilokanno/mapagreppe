@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff; /* Fundo do site 100% branco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative; 
+}
+
+/* Posicionamento e tamanho do Logo */
+#logo-site {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  max-width: 300px; /* Aumentei de 250px para 300px para destacar mais */
+  height: auto;
+  z-index: 1000; 
+}
+
+/* A box do mapa */
+#mapa {
+  width: 75vw;  /* Diminuído levemente para 75% */
+  height: 75vh;
+  border-radius: 12px;
+  border: 2px solid #d1d5db; /* Borda cinza adicionada à caixa do mapa */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10); /* Sombra mais suave por causa do fundo branco */
+  background-color: #e0e0e0;
+}
+
+/* Estilo da caixinha com o nome do município (Tooltip) */
+.leaflet-tooltip {
+  font-weight: bold;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 4px 8px;
+}
