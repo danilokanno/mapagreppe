@@ -3,58 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mapa Greppe - Estado de SP - Versão Automática</title>
+    <title>Mapa Greppe - Estado de SP</title>
   </head>
   <body>
-    <!-- A tag do logo -->
+    <!-- Logo -->
     <img src="/logo.jpg" alt="Logo do Projeto" id="logo-site">
+
+    <!-- Menu de Botões (Canto Superior Direito) -->
+    <nav id="menu-navegacao">
+      <button class="btn-menu" onclick="abrirModal('modal-historia')">História do Grupo</button>
+      <button class="btn-menu" onclick="abrirModal('modal-membros')">Membros</button>
+      <button class="btn-menu" onclick="abrirModal('modal-producoes')">Produções Bibliográficas</button>
+    </nav>
     
-    <!-- Botões do Menu Superior -->
-    <div id="botoes-menu">
-      <button id="btn-membros" class="menu-btn">Membros do GREPPE</button>
-      <button id="btn-producoes" class="menu-btn">Produções Bibliográficas</button>
-      <button id="btn-historia" class="menu-btn">História do Grupo</button>
-    </div>
+    <!-- Caixa do Mapa -->
+    <div id="mapa"></div>
 
-    <!-- Modal: Membros -->
-    <div id="modal-membros" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Membros do GREPPE</h2>
-        <hr>
-        <ul>
-          <li><a href="#" target="_blank">Pesquisador Exemplo 1</a></li>
-          <li><a href="#" target="_blank">Pesquisador Exemplo 2</a></li>
-          <!-- Adicione mais membros copiando a linha acima -->
-        </ul>
-      </div>
-    </div>
+    <!-- ============================================== -->
+    <!-- MODAIS (AS CAIXAS FLUTUANTES) -->
+    <!-- ============================================== -->
 
-    <!-- Modal: Produções -->
-    <div id="modal-producoes" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Produções Bibliográficas</h2>
-        <hr>
-        <ul>
-          <li><a href="#" target="_blank">Artigo: A Privatização da Educação em SP (2023)</a></li>
-          <li><a href="#" target="_blank">Livro: Redes Estaduais e o Setor Privado (2022)</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Modal: História -->
+    <!-- 1. Caixa de História -->
     <div id="modal-historia" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
+      <div class="modal-conteudo">
+        <button class="fechar" onclick="fecharModal('modal-historia')">&times;</button>
         <h2>História do Grupo</h2>
         <hr>
-        <p>O GREPPE (Grupo de Estudos e Pesquisas em Políticas Educacionais) da Unicamp tem como foco...</p>
-        <p><em>(Substitua este texto pela história completa do seu grupo)</em></p>
+        
+        <!-- EDITE O TEXTO DA HISTÓRIA AQUI: -->
+        <p>O GREPPE é um grupo de pesquisa focado em políticas educacionais...</p>
+        <p>Aqui você pode escrever vários parágrafos contando a trajetória do grupo de pesquisa.</p>
+        
       </div>
     </div>
 
-    <div id="mapa"></div>
+    <!-- 2. Caixa de Membros -->
+    <div id="modal-membros" class="modal">
+      <div class="modal-conteudo">
+        <button class="fechar" onclick="fecharModal('modal-membros')">&times;</button>
+        <h2>Membros da Equipe</h2>
+        <hr>
+        
+        <!-- EDITE OS MEMBROS AQUI (Copie o bloco abaixo para adicionar mais pessoas): -->
+        <p>
+          <strong>Danilo Kanno</strong><br>
+          Pesquisador quantitativo e Professor de matemática.<br>
+          <a href="COLE_O_LINK_DO_LATTES_AQUI" target="_blank">Acessar Currículo Lattes ↗</a>
+        </p>
+
+        <p>
+          <strong>Nome de outro membro</strong><br>
+          Função no projeto.<br>
+          <a href="#" target="_blank">Acessar Currículo Lattes ↗</a>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- 3. Caixa de Produções -->
+    <div id="modal-producoes" class="modal">
+      <div class="modal-conteudo">
+        <button class="fechar" onclick="fecharModal('modal-producoes')">&times;</button>
+        <h2>Produções Bibliográficas</h2>
+        <hr>
+        
+        <!-- EDITE AS PRODUÇÕES AQUI: -->
+        <p><strong>Artigo 2023:</strong> Nome da publicação ou artigo. - <a href="#" target="_blank">Ler publicação</a></p>
+        <p><strong>Livro 2022:</strong> Nome do livro publicado. - <a href="#" target="_blank">Ler publicação</a></p>
+        
+      </div>
+    </div>
     
     <script type="module" src="/main.js"></script>
   </body>

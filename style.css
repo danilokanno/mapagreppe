@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #ffffff; 
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,103 +24,36 @@ body {
   z-index: 1000; 
 }
 
-/* Novo: Botões do Menu Superior */
-#botoes-menu {
+/* Posiciona os botões no canto superior direito */
+#menu-navegacao {
   position: absolute;
-  top: 30px;
+  top: 40px;
   right: 40px;
-  z-index: 1000;
   display: flex;
   gap: 15px;
+  z-index: 1000;
 }
 
-.menu-btn {
-  background-color: #ffffff;
+/* Estilo elegante para os botões */
+.btn-menu {
+  cursor: pointer;
   color: #333;
-  border: 2px solid #d1d5db;
-  padding: 10px 20px;
-  border-radius: 8px;
+  font-weight: bold;
   font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
-/* Ao passar o mouse, os botões ficam com a mesma cor do seu mapa (#70cbe9) */
-.menu-btn:hover {
+.btn-menu:hover {
   background-color: #70cbe9;
-  border-color: #70cbe9;
   color: white;
+  border-color: #70cbe9;
 }
 
-/* Novo: Estilo das Janelas Modais */
-.modal {
-  display: none; /* Ficam escondidas por padrão */
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.5); /* Fundo escuro transparente */
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 30px;
-  border-radius: 12px;
-  width: 50vw;
-  max-width: 600px;
-  max-height: 80vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.modal-content h2 {
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.modal-content hr {
-  border: 0;
-  border-top: 1px solid #eee;
-  margin-bottom: 15px;
-}
-
-.modal-content ul {
-  list-style-position: inside;
-  line-height: 1.8;
-}
-
-.modal-content a {
-  color: #70cbe9;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.modal-content a:hover {
-  text-decoration: underline;
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #999;
-}
-
-.close-btn:hover {
-  color: #333;
-}
-
-/* A box do mapa */
 #mapa {
   width: 75vw;  
   height: 75vh;
@@ -128,10 +61,8 @@ body {
   border: 2px solid #d1d5db; 
   box-shadow: 0 10px 30px rgba(0,0,0,0.10); 
   background-color: #e0e0e0;
-  margin-top: 40px; /* Desce um pouco para não bater no menu */
 }
 
-/* Tooltip */
 .leaflet-tooltip {
   font-weight: bold;
   color: #333;
@@ -140,4 +71,72 @@ body {
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   padding: 4px 8px;
+}
+
+/* ============================================== */
+/* ESTILOS DOS MODAIS (CAIXAS FLUTUANTES)         */
+/* ============================================== */
+.modal {
+  display: none; /* Escondido até clicar no botão */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6); /* Fundo da tela escurecido */
+  backdrop-filter: blur(2px); /* Borra levemente o mapa atrás */
+}
+
+.modal-conteudo {
+  background-color: #fff;
+  margin: 10vh auto;
+  padding: 40px;
+  border-radius: 12px;
+  width: 50vw; /* A caixa ocupa 50% da tela */
+  max-height: 80vh;
+  overflow-y: auto; /* Cria barra de rolagem se o texto for grande */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.modal-conteudo h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal-conteudo hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.modal-conteudo p {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.modal-conteudo a {
+  color: #70cbe9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.modal-conteudo a:hover {
+  text-decoration: underline;
+}
+
+.fechar {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  border: none;
+  background: none;
+  line-height: 1;
+}
+
+.fechar:hover {
+  color: #333;
 }
