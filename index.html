@@ -9,8 +9,11 @@
     <!-- Logo -->
     <img src="/logo.jpg" alt="Logo do Projeto" id="logo-site">
 
-    <!-- Menu de Botões (Canto Superior Direito) -->
+    <!-- Menu de Botões -->
     <nav id="menu-navegacao">
+      <!-- NOVO BOTÃO DE COLORIR O MAPA -->
+      <button id="btn-colorir" class="btn-menu" onclick="alternarColoracao()">Colorir por População</button>
+      
       <button class="btn-menu" onclick="abrirModal('modal-historia')">História do Grupo</button>
       <button class="btn-menu" onclick="abrirModal('modal-membros')">Membros</button>
       <button class="btn-menu" onclick="abrirModal('modal-producoes')">Produções Bibliográficas</button>
@@ -18,6 +21,17 @@
     
     <!-- Caixa do Mapa -->
     <div id="mapa"></div>
+
+    <!-- LEGENDA DO MAPA (Aparece apenas quando colorido) -->
+    <div id="legenda-mapa" class="legenda">
+      <h4>População (Censo 2022)</h4>
+      <div><span style="background-color: #edf8fb;"></span> Até 10 mil (Muito pequenos)</div>
+      <div><span style="background-color: #b2e2e2;"></span> 10.001 a 50 mil (Pequenos)</div>
+      <div><span style="background-color: #66c2a4;"></span> 50.001 a 100 mil (Médios)</div>
+      <div><span style="background-color: #2ca25f;"></span> 100.001 a 500 mil (Grandes)</div>
+      <div><span style="background-color: #006d2c;"></span> Acima de 500 mil (Metropolitanos)</div>
+      <div style="margin-top: 8px;"><span style="background-color: #cccccc;"></span> Sem dados</div>
+    </div>
 
     <!-- ============================================== -->
     <!-- MODAIS (AS CAIXAS FLUTUANTES) -->
@@ -29,17 +43,10 @@
         <button class="fechar" onclick="fecharModal('modal-historia')">&times;</button>
         <h2>História do Grupo</h2>
         <hr>
-        
-        <!-- EDITE O TEXTO DA HISTÓRIA AQUI: -->
         <p>Um pouco da nossa História.</p>
-        <p>Mais informações em <a href="https://revistas.ufpr.br/jpe/article/view/32275/20495">https://revistas.ufpr.br/jpe/article/view/32275/20495</a></p>
-        <p>No início</p>
-        <p>A alternativa para agregar o interesse em estudar políticas em educação básica com a necessidade de trabalhar coletivamente foi vincular-me a uma pesquisa nacional, de caráter interinstitucional com o objetivo de analisar as consequências do Fundo de Manutenção e Desenvolvimento do Ensino Fundamental e Valorização do Magistério (FUNDEF), na oferta de educação básica em diferentes Estados e municípios brasileiros. A pesquisa nacional foi coordenada pelos Profs. Beatriz Luce, Lisete Arelaro e Romualdo Portela Oliveira com o apoio da Fundação Ford e de várias agências estaduais de fomento. Contei com o apoio de duas bolsistas de Iniciação Científica subsidiadas pela Fapesp e de uma estagiária recém-formada. Egle Pessoa Bezerra e Adriana Dragone Silveira, duas das três integrantes dessa pesquisa, ainda hoje compõem o grupo e são, respectivamente, mestre e doutora em educação. O GREPPE (Grupo de Estudos e Pesquisas em Políticas Educacionais) se iniciava. A participação nesta pesquisa (2001-2003) teve como mérito integrar um conjunto de pesquisadores de distintas instituições brasileiras organizados em redes para o desenvolvimento de pesquisas de natureza interinstitucional. Após conclusão do estudo sobre o Fundef, uma dessas redes, se articulou em torno da pesquisa interinstitucional Programa Dinheiro Direto na Escola (PDDE): uma proposta de redefinição do papel do Estado? coordenada pela profa. Vera Maria Vidal Peroni (UFRGS) e por mim, na qual se analisou as consequências do PDDE para a gestão e o financiamento de escolas públicas em cinco Estados e dez municípios do Brasil. Da pesquisa financiada pelo CNPq e publicada pelo INEP em 2007, participaram distintos centros coordenados localmente por Rosana Cruz- UFPI, Liliene Luz- UEPI, Terezinha Silva – UFPA, Teise Garcia- USP-RP e Regina Cestari (UCDB).Em São Paulo, a investigação se deu no âmbito do Greppe e contou com alunos de graduação e de mestrado que, ainda hoje, estão vinculados à pesquisa educacional e ao grupo, alguns
-53 JORNAL DE POLÍTICAS EDUCACIONAIS. N° 12 | JULhO-DEzEmbRODE 2012 | PP. 51–56deles já como professores de universidades. Paralelamente ao Greppe se desenvolveu uma linha de investigação sobre Ensino Médio noturno ofertado nas escolas públicas de São Paulo2, no segundo semestre de 2003. Como em outra oportunidade esta pesquisa também se vinculou a uma investigação nacional sob a responsabilidade dos Profs. Sandra Zakia de Souza, Romualdo Portela de Oliveira e Valéria Virginia Lopes, financiada pela UNESCO e pelo MEC. Essas experiências interinstitucionais de pesquisa reforçaram a crença na superioridade do trabalho coletivo em relação ao esforço individual.Por ter um percurso de pesquisas interinstitucional constituído e, principalmente por fazer parte de um grupo sob minha coordenação e a da Profa. Teise Garcia, o GREPEE foi incorporado ao Diretório de Grupos de Pesquisa do CNPq em 2005. Já em 2006 o ingresso da Profa. Raquel Borghi à UNESP ao grupo reafirmou a perspectiva delineada desde 2001, segundo a qual as pesquisas devem ser coletivas e interinstitucionais, precisam envolver estudantes em diferentes estágios de formação e necessitam dialogar com as atividades de extensão. Parte desse processo está indicada no site <a href="http://www.rc.unesp.br/ib/educacao/greppe.2">http://www.rc.unesp.br/ib/educacao/greppe.2</a>.</p>
-        <p>Perspectiva política</p>
-        <p>Uma das perspectivas do GREPPE é construir uma dinâmica de produção científica que se constitua como espaço de formação de novos pesquisadores, articulados na divulgação de experiências na área do conhecimento com o objetivo de estimular o debate qualificado no campo da política educacional, com o compromisso de defesa do direito à educação pública de qualidade para todos. Esta é uma opção política.Assim, assumimos o compromisso de organizar a cada dois anos Seminários de Pesquisa que permitam o debate ampliado sobre tema abordado nas investigações em andamento do grupo. Para tanto, temos contado com a participação de pesquisadores de distintos centros de investigação, brasileiros e estrangeiros em mesas redondas ou conferências relacionadas aos temas focalizados em nossas investigações. Até 2011, os Seminários tiveram lugar na UNESP de Rio Claro, versavam sobre os seguintes temas: Autonomia e Regulações da Escola (2007); Interfaces entre o Público e o Privado para a Oferta Educacional (2009); e, Organização do trabalho na escola e reformas educativas (2011). Mas sem a participação ativa e dos alunos, especialmente da graduação, na coordenação da infraestrutura e na operacionalização dos mesmos, esses Fóruns não ocorreriam. Além dos fóruns apontados acima, o Greppe protagonizou um evento considerado um dos mais importantes. Trata-se de um seminário interinstitucional e itinerante que envolveu quatro campi da UNESP, a FE-UNICAMP, a FEUSP e a USP-RP com transmissão simultânea, via teleconferência, de mesas redondas realizadas em três cidades diferentes para os polos envolvidos. Nesse evento contamos com a ousadia de colegas professores como: Raquel Borghi, Eugênio Ramos, Regiane Bertagna, Nora Krawczyk, Pedro Ganzeli, Romualdo P Oliveira, Teise Garcia, Graziela Zambão, João Gentilini, José Luiz Guimarães; de técnicos; e, de alunos das referidas instituições.</p>
-        <p>Em 2007 ocorreu O Plano de Desenvolvimento da Educação (PDE) em debate nas universidades paulistas, no qual compareceram pesquisadores como: Celso de R. Beisegel, Lisete Arelaro, Romualdo Portela Oliveira, Luiz Carlos Freitas, Nigel Brooks, Marcio da Costa, Silke Weber, Luiz Araújo, Otaviano Helene, Sergio Haddad, Reinaldo Fernandes e Marcia Ângela Aguiar, além da presença dos representantes do MEC para o aprofundamento do debate dos temas do PDE. Diante dos limites institucionais decorrentes de sua localização do Departamento de Educação no Instituto de Biociências, conseguimos, com esforços coletivos, articular e ousar a constituição desses eventos ressaltando a importância da opção política pela organização e pelo investimento em grupos de pesquisas conectados em torno de interesses acadêmicos e de compromissos políticos. Também expressa nossa opção por uma política de formação de pesquisadores coletiva a realização de seminários de pesquisas relacionados aos projetos de investigação em andamento, nos quais pesquisadores doutores e estudantes de todos os níveis submetem ao debate e à rigorosa, mas solidária, crítica suas produções.
-Na segunda década deste século, as Professoras Regiane Bertagna (UNESP-RC) e Selma Venco ( UNICAMP) passaram a compor o Grupo, ampliando e qualificando as pesquisas desenvolvidas com temas relacionados ao trabalho docente e às consequências de políticas contemporâneas para sua precariedade, no caso da Professora Selma Borghi e, no caso da Professora Regiane Bertagna, a estudos sobre políticas de avaliação educacional associadas a modelos gerencialistas de educação.</p>  
+        <p>Mais informações em <a href="https://revistas.ufpr.br/jpe/article/view/32275/20495" target="_blank">Revista UFPR</a></p>
+        <p>No início...</p>
+        <p>A alternativa para agregar o interesse em estudar políticas em educação básica...</p>
       </div>
     </div>
 
@@ -49,57 +56,26 @@ Na segunda década deste século, as Professoras Regiane Bertagna (UNESP-RC) e S
         <button class="fechar" onclick="fecharModal('modal-membros')">&times;</button>
         <h2>Integrantes</h2>
         <hr>
-        
-        <!-- EDITE OS MEMBROS AQUI (Copie o bloco abaixo para adicionar mais pessoas): -->
-        <p>
-          <strong>Dra. Theresa Maria de Freitas Adrião (Coord)</strong><br>
-          <a href="https://lattes.cnpq.br/3976705366604804" target="_blank">Acessar Currículo Lattes ↗</a>
-        </p>
-
-        <p>
-          <strong>Dra. Selma Borghi Venco (Coord)</strong><br>
-          <a href="https://lattes.cnpq.br/8164993192480435" target="_blank">Acessar Currículo Lattes ↗</a>
-        </p>
-
-        <p>
-          <strong>Dra. Teise de Oliveira Guaranha Garcia (Coord)</strong><br>
-          <a href="https://lattes.cnpq.br/4464815211181255" target="_blank">Acessar Currículo Lattes ↗</a>
-        </p>
-
-        <p>
-          <strong>Dra. Raquel Fontes Borghi (Coord)</strong><br>
-          <a href="https://lattes.cnpq.br/6883075564600277" target="_blank">Acessar Currículo Lattes ↗</a>
-        </p>
-
-        <p>
-          <strong>Dra. Regiane Helena Bertagna (Coord)</strong><br>
-          <a href="https://lattes.cnpq.br/4538018150038718" target="_blank">Acessar Currículo Lattes ↗</a>
-        </p>
-
-        <p>
-          <strong>PESQUISADOR</strong><br>
-          <a href="LINK DO LATTES" target="_blank">Acessar Currículo Lattes ↗</a>
-        </p>
-
-
-
+        <p><strong>Dra. Theresa Maria de Freitas Adrião (Coord)</strong><br><a href="https://lattes.cnpq.br/3976705366604804" target="_blank">Acessar Currículo Lattes ↗</a></p>
+        <p><strong>Dra. Selma Borghi Venco (Coord)</strong><br><a href="https://lattes.cnpq.br/8164993192480435" target="_blank">Acessar Currículo Lattes ↗</a></p>
+        <p><strong>Dra. Teise de Oliveira Guaranha Garcia (Coord)</strong><br><a href="https://lattes.cnpq.br/4464815211181255" target="_blank">Acessar Currículo Lattes ↗</a></p>
+        <p><strong>Dra. Raquel Fontes Borghi (Coord)</strong><br><a href="https://lattes.cnpq.br/6883075564600277" target="_blank">Acessar Currículo Lattes ↗</a></p>
+        <p><strong>Dra. Regiane Helena Bertagna (Coord)</strong><br><a href="https://lattes.cnpq.br/4538018150038718" target="_blank">Acessar Currículo Lattes ↗</a></p>
+        <p><strong>Danilo Kanno</strong><br><a href="#" target="_blank">Acessar Currículo Lattes ↗</a></p>
       </div>
     </div>
 
-    <!-- 3. Caixa de Produções -->
+        <!-- 3. Caixa de Produções -->
     <div id="modal-producoes" class="modal">
       <div class="modal-conteudo">
         <button class="fechar" onclick="fecharModal('modal-producoes')">&times;</button>
         <h2>Produções Bibliográficas</h2>
         <hr>
-        
-        <!-- EDITE AS PRODUÇÕES AQUI: -->
         <p><strong>Artigo 2023:</strong> Nome da publicação ou artigo. - <a href="#" target="_blank">Ler publicação</a></p>
-        <p><strong>Livro 2022:</strong> Nome do livro publicado. - <a href="#" target="_blank">Ler publicação</a></p>
-        
       </div>
     </div>
     
+    <!-- ESSA LINHA ABAIXO É O CORAÇÃO DO PROJETO. ELA PRECISA EXISTIR! -->
     <script type="module" src="/main.js"></script>
   </body>
 </html>
