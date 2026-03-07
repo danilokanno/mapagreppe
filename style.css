@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #ffffff; /* Fundo do site 100% branco */
+  background-color: #ffffff; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,27 +15,123 @@ body {
   position: relative; 
 }
 
-/* Posicionamento e tamanho do Logo */
 #logo-site {
   position: absolute;
   top: 30px;
   left: 40px;
-  max-width: 300px; /* Aumentei de 250px para 300px para destacar mais */
+  max-width: 300px; 
   height: auto;
   z-index: 1000; 
 }
 
-/* A box do mapa */
-#mapa {
-  width: 75vw;  /* Diminuído levemente para 75% */
-  height: 75vh;
-  border-radius: 12px;
-  border: 2px solid #d1d5db; /* Borda cinza adicionada à caixa do mapa */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.10); /* Sombra mais suave por causa do fundo branco */
-  background-color: #e0e0e0;
+/* Novo: Botões do Menu Superior */
+#botoes-menu {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 1000;
+  display: flex;
+  gap: 15px;
 }
 
-/* Estilo da caixinha com o nome do município (Tooltip) */
+.menu-btn {
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #d1d5db;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+/* Ao passar o mouse, os botões ficam com a mesma cor do seu mapa (#70cbe9) */
+.menu-btn:hover {
+  background-color: #70cbe9;
+  border-color: #70cbe9;
+  color: white;
+}
+
+/* Novo: Estilo das Janelas Modais */
+.modal {
+  display: none; /* Ficam escondidas por padrão */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5); /* Fundo escuro transparente */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 50vw;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.modal-content hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.modal-content ul {
+  list-style-position: inside;
+  line-height: 1.8;
+}
+
+.modal-content a {
+  color: #70cbe9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.modal-content a:hover {
+  text-decoration: underline;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #999;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* A box do mapa */
+#mapa {
+  width: 75vw;  
+  height: 75vh;
+  border-radius: 12px;
+  border: 2px solid #d1d5db; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10); 
+  background-color: #e0e0e0;
+  margin-top: 40px; /* Desce um pouco para não bater no menu */
+}
+
+/* Tooltip */
 .leaflet-tooltip {
   font-weight: bold;
   color: #333;
